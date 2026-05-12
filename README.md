@@ -1,48 +1,88 @@
 # Customer Churn Analysis & Prediction
+### End-to-End Data Analytics | Business Analytics | Data Science Project
+
+---
 
 ## Problem Statement
-A telecom company is losing 26% of its customers every month.
-This project identifies why customers churn, predicts who will 
-churn next, and provides business recommendations to reduce it.
+A telecom company is losing **26% of its customers** every month. This project identifies why customers churn, predicts who will churn next, and delivers business recommendations to reduce revenue loss.
+
+---
 
 ## Tools Used
-- Python (Pandas, Scikit-learn, Matplotlib, Seaborn)
-- SQL (DB Browser for SQLite)
-- Power BI Desktop
-- Git and GitHub
+| Tool | Purpose |
+|------|---------|
+| Python | Data analysis and machine learning |
+| Pandas, Seaborn, Matplotlib | EDA and visualization |
+| Scikit-learn | ML model building |
+| DB Browser for SQLite | SQL business analysis |
+| Power BI Desktop | Interactive dashboard |
+| Git & GitHub | Version control |
+
+---
 
 ## Dataset
-IBM Telco Customer Churn
-7043 rows and 21 columns
-Source: https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+- **Source:** IBM Telco Customer Churn
+- **Link:** https://www.kaggle.com/datasets/blastchar/telco-customer-churn
+- **Size:** 7,043 customers, 21 features
 
-## Key Findings
-- Overall churn rate is 26%
-- Month-to-month contract customers churn the most
-- High monthly charges and low tenure = highest churn risk
-- Electronic check payment method has highest churn rate
-- New customers (0-12 months) churn significantly more
-
-## Machine Learning Results
-- Best Model: Random Forest
-- ROC-AUC Score: 0.9183
-- Correctly identified churners: 857
-- Missed churners: 172
-
-## Business Impact
-- Monthly revenue at risk: Rs. 86,000
-- Potential monthly savings if 30% retained: Rs. 1,28,549
-
-## Business Recommendations
-1. Offer discounts to convert month-to-month customers 
-   to annual plans
-2. Create retention program for customers in first 12 months
-3. Incentivize auto pay enrollment to reduce churn
-4. Provide Tech Support to high risk customers
+---
 
 ## Project Structure
-data/          - Raw and processed datasets
-notebooks/     - Jupyter notebooks (EDA, Preprocessing, Model)
-sql/           - SQL analysis queries
-dashboard/     - Power BI dashboard file
-models/        - Saved ML model
+```
+Customer-churn/
+├── data/          <- Raw and processed datasets
+├── notebooks/     <- EDA, Preprocessing, ML notebooks
+├── sql/           <- SQL analysis queries
+├── dashboard/     <- Power BI dashboard
+└── models/        <- Saved ML model
+```
+
+---
+
+## Key Findings
+- Month-to-month contract customers churn the most
+- New customers (0-12 months tenure) are highest risk
+- High monthly charges + low tenure = highest churn combination
+- Electronic check payers churn more than auto pay customers
+- Customers without Tech Support churn significantly more
+
+---
+
+## Model Results
+| Model | ROC-AUC Score |
+|-------|--------------|
+| Logistic Regression | 0.8861 |
+| Gradient Boosting | 0.9166 |
+| **Random Forest** | **0.9183** ✅ |
+
+---
+
+## Business Impact
+| Metric | Value |
+|--------|-------|
+| Monthly Revenue at Risk | Rs. 86,000 |
+| Churners Correctly Identified | 857 |
+| Potential Monthly Savings | Rs. 1,28,549 |
+
+---
+
+## Business Recommendations
+1. Offer discounts to convert month-to-month customers to annual plans
+2. Create onboarding retention program for first 12 months customers
+3. Incentivize auto pay enrollment to reduce payment related churn
+4. Proactively offer Tech Support to high risk customers
+
+---
+
+## How to Run
+```bash
+# Install libraries
+pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn
+
+# Run notebooks in order
+01_EDA.ipynb
+02_Preprocessing.ipynb
+03_Model.ipynb
+```
+
+---
